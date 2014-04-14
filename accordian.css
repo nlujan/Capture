@@ -1,0 +1,84 @@
+#header{
+	width:100%;
+	height:50px;
+	position:fixed;
+	top: 0px;
+	left:0px;
+/*	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;*/
+	box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
+	background-color: white;
+}
+body{
+	background-color: #EBF5FF;
+}
+
+#logo{
+	position:relative;
+	height: 130%;
+	margin-left:1%;
+}
+#container{
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 130px;
+	height: 700px;
+	width: 1500px;
+
+}
+#accordianContainer{
+	position: relative;
+	float: left;
+	width:92%;
+	height:100%;
+
+}
+#accordian{
+	margin: 0px auto;
+
+}
+#addButton{
+	position: relative;
+	float: right;
+	width:8%;
+	height:100%;
+	padding: 10px 15px;
+	background: #33CC33;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #20538D;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1p;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    outline: 0;
+
+}
+#addButton:hover{
+    background: #29A329;
+    border: solid 1px #2A4E77;
+    text-decoration: none;
+
+}
+#addButton:active {
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #1D721D;
+    border: solid 1px #203E5F;
+}
+
+.clear { clear: both;}
+
+.fa-plus{
+	color: white;
+}
