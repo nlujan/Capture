@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Panel</title>
+    <link rel="stylesheet" type="style/css" href="panel.css">
+    <link rel="stylesheet" type="style/css" href="simptip.css">
+    <link rel="stylesheet" type="style/css" href="jquery.tagedit.css">
+    <script type="text/javascript" src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="jquery.tagedit.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#invite_screen").addClass("hide_panel");
+        $("#panel .invite_button").click(function() {
+          $("#panel").addClass("blur");
+          $("#invite_screen").addClass("show_panel");
+        });
+        $("#invite_screen #delete").click(function() {
+          $("#invite_screen").removeClass("show_panel");
+          $("#invite_screen").addClass("hide_panel");
+          $("#panel").removeClass("blur");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="panel">
+      <div id="title_screen">
+        <div class="title_event_name simptip-position-right simptip-movable simptip-smooth" data-tooltip="Rename"><input type="text" class="input_title event_name" value="Event Name" /></div>
+        <div class="title_address simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Address"><input type="text" class="input_title address" value="Address" /></div>
+        <div class="title_date simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Date"><input type="date" class="input_title time" value="Date" /></div>
+        <div class="title_time simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Time"><input type="time" class="input_title time" value="Time" /></div>
+        <div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Delete Event">
+          <img class="delete_inner" src="icon_304/icon_304.png" />
+        </div>
+      </div>
+      <button class="panel_button invite_button">Invite</button>
+      <button class="panel_button upload_button">Upload</button>
+      <button class="panel_button relive_button">Relive</button>
+    </div>
+
+    <!-- invite screen -->
+    <div id="invite_screen">
+      <input type="text" class="email_list" name="tag[]" value="example@gmail.com" />
+      <button class="panel_button inviteNested_button">Invite</button>
+      <button class="panel_button inviteToAll_button">Invite to All</button>
+      <div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Cancel">
+        <img class="delete_inner" src="icon_19368/icon_19368.png" />
+      </div>
+    </div>
+  </body>
+</html>

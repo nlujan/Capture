@@ -1,0 +1,207 @@
+#panel {
+	background-image: url("wedding_photo_2.jpg");
+	background-position: center center;
+	height: 600px;
+	width: 800px;
+	border: 1px solid;
+	position: relative;
+}
+
+#panel #title_screen {
+	background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0));
+	background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0));
+	width: 100%;
+	height: 300px;
+	position: absolute;
+	top: 0px;
+}
+
+#panel .title_event_name {
+	position: absolute;
+	left:50px;
+	margin-top: 0px;
+	padding-top: 0px;
+	top: 30px;
+	/*font-style: italic;*/
+}
+
+#panel .title_address {
+	position: absolute;
+	left:50px;
+	top: 100px;
+	/*font-style: italic;*/
+}
+
+#panel .title_date {
+	position: absolute;
+	left:50px;
+	top: 130px;
+	/*font-style: italic;*/
+}
+
+#panel .title_time {
+	position: absolute;
+	left:50px;
+	top: 160px;
+	/*font-style: italic;*/
+}
+
+.input_title {
+	background-color: transparent;
+	border: none;
+	font-family: "Gill Sans";
+	color: white;
+}
+
+#panel .input_title:focus {
+	outline: 0;
+	background-color: rgba(53,65,68,0.7);
+}
+
+#panel .input_title:hover {
+	background-color: rgba(53,65,68,0.7);
+	transition: background-color 0.25s;
+	-webkit-transition: background-color 0.25s;
+}
+
+#panel .event_name {
+	font-size: 50px;
+	font-weight: 200;
+	border-radius: 5px;
+}
+
+#panel .address {
+	font-size: 15px;
+	font-weight: 200;
+	border-radius: 3px;
+}
+
+#panel .time {
+	font-size: 15px;
+	font-weight: 200;
+	border-radius: 3px;
+}
+
+#delete {
+	height: 20px;
+	width: 20px;
+	border-radius: 4px;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	/*opacity: 0.7;*/
+	cursor: pointer;
+	font-family: "Gill Sans";
+}
+
+.delete_inner {
+	height: 15px;
+	margin-left: 2px;
+	margin-top: 2px;
+}
+
+#delete:hover {
+	background-color: rgba(53,65,68,0.7);
+	transition: background-color 0.25s;
+	-webkit-transition: background-color 0.25s;
+}
+
+.panel_button {
+	width: 200px;
+	height: 40px;
+	background-color: rgba(94,171,196,0.7);
+	color: white;
+	border: none;
+	font-size: 25px;
+	font-family: "Gill Sans";
+	font-weight: 300;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	position: absolute;
+}
+
+.panel_button:hover {
+	background-color: rgba(94,171,196,1.0);
+	transition: background-color 0.25s;
+	-webkit-transition: background-color 0.25s;
+}
+
+#invite_screen .panel_button {
+	background-color: rgba(119,77,33,0.7);
+}
+
+#invite_screen .panel_button:hover {
+	background-color: rgba(119,77,33,1.0);
+	transition: background-color 0.25s;
+	-webkit-transition: background-color 0.25s;
+}
+
+.panel_button:focus {
+	outline: 0;
+}
+
+.invite_button {
+	margin-left: 50px;
+	bottom: 50px;
+}
+
+.upload_button {
+	margin-left: 300px;
+	bottom: 50px;
+}
+
+.relive_button {
+	margin-left: 550px;
+	bottom: 50px;
+}
+
+.inviteNested_button {
+	margin-left: 133px;
+	bottom: 150px;
+}
+
+.inviteToAll_button {
+	margin-left: 466px;
+	bottom: 150px;
+}
+
+.blur {
+	filter: blur(24px);
+	-webkit-filter: blur(24px);
+	transition: filter 1s;
+	-webkit-transition: -webkit-filter 1s;
+	transition-timing-function: ease-out;
+	-webkit-transition-timing-function: ease-out;
+}
+
+.hide_panel {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.show_panel {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+}
+
+#invite_screen {
+	position: relative;
+	height: 600px;
+	width: 800px;
+	bottom: 600px;
+}
+
+.email_list {
+	height: 150px;
+	width: 533px;
+	position: absolute;
+	top: 200px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
