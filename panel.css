@@ -1,8 +1,10 @@
 #panel {
 	background-image: url("wedding_photo_2.jpg");
 	background-position: center center;
-	height: 600px;
-	width: 800px;
+	/*height: 600px;
+	width: 800px;*/
+	height: 100%;
+	width: 100%
 	border: 1px solid;
 	position: relative;
 }
@@ -148,22 +150,23 @@
 }
 
 .upload_button {
-	margin-left: 300px;
+	margin-left: -100px;
+	left: 50%;
 	bottom: 50px;
 }
 
 .relive_button {
-	margin-left: 550px;
+	right: 50px;
 	bottom: 50px;
 }
 
 .inviteNested_button {
-	margin-left: 133px;
+	left: 15%;
 	bottom: 150px;
 }
 
 .inviteToAll_button {
-	margin-left: 466px;
+	right: 15%;
 	bottom: 150px;
 }
 
@@ -190,18 +193,16 @@
 
 #invite_screen {
 	position: relative;
-	height: 600px;
-	width: 800px;
-	bottom: 600px;
+	height: 100%;
+	width: 100%;
+	bottom: 100%;
 }
 
 .email_list {
 	height: 150px;
-	width: 533px;
+	width: 70%;
 	position: absolute;
 	top: 200px;
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: -35%;
+	left: 50%;
 }

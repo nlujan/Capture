@@ -15,7 +15,7 @@
 			tabWidth: null, /* Width of each slide's "tab" (when clicked it opens the slide) or width of each tab compared to a 100% container. */
 			height: null, /* Height of the container. This option is required. */
 			startingSlide: 0, /* Zero-based index of which slide should be displayed. */
-			slideClass: null, /* Class prefix of each slide. If left null, no classes will be set. */
+			slideClass: "frame", /* Class prefix of each slide. If left null, no classes will be set. */
 			easing: null, /* Easing method. */
 			speed: 1200, /* Speed of the slide transition (in ms). */
 			auto: true, /* Whether or not the slideshow should play automatically. */
