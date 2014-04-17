@@ -4,9 +4,10 @@
 	/*height: 600px;
 	width: 800px;*/
 	height: 100%;
-	width: 100%
+	width: 100%;
 	border: 1px solid;
 	position: relative;
+	bottom: 100%;
 }
 
 #panel #title_screen {
@@ -195,7 +196,7 @@
 	position: relative;
 	height: 100%;
 	width: 100%;
-	bottom: 100%;
+	bottom: 200%;
 }
 
 .email_list {
@@ -205,4 +206,23 @@
 	top: 200px;
 	margin-left: -35%;
 	left: 50%;
+}
+
+#gray_screen {
+	height: 100%;
+	width: 100%;
+	background-color: gray;
+	/*z-index: -1;*/
+}
+
+#vertical_text {
+	transform: rotate(90deg);
+	-webkit-transform: rotate(270deg);
+	color: white;
+	font-family: "Gill Sans";
+	font-size: 40px;
+	font-weight: 200;
+	position: absolute;
+	top: 70%;
+	left: -50px;
 }
