@@ -7,7 +7,7 @@ $(function() {
 		auto: false,
 		slideWidth: "70%",
 		width: "100%",
-		height: 700,
+		height: 500,
 		trigger: "mousedown"
 	});
 
