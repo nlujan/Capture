@@ -83,3 +83,7 @@ body{
 .fa-plus{
 	color: white;
 }
+
+#accordian > div{
+	box-shadow: -5px 0px 20px 0px black;
+}
