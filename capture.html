@@ -36,7 +36,7 @@
               if (typeof $(".frame-open #title_screen") === "undefined" || $(".frame-open #title_screen:hidden")) {
                 $(".frame-open #title_screen").fadeIn(1000);
                 $(".frame-open .panel_button").fadeIn(1000);
-                removeVerticalName($(".frame-open #panel #vertical_text"));
+                removeVerticalName($(".frame-open #panel"), $(".frame-open #panel #vertical_text"));
               } 
             }
           $(this).data("beenclicked", true);
@@ -44,21 +44,25 @@
           if (typeof $(".frame-closed #title_screen") !== "undefined" || $(".frame-closed #title_screen:visible")) {
             $(".frame-closed #title_screen").fadeOut(1000);
             $(".frame-closed .panel_button").fadeOut(1000);
-            verticalName($(".frame-closed #panel"), $(".frame-closed .input_title").val());
+            removeVerticalName($(".frame-previous #panel"), $(".frame-previous #panel #vertical_text"));
+            verticalName($(".frame-previous #panel"), $(".frame-previous .input_title").val());
           }
         })
 
       });
 
       var verticalName = function(panel, event_name_text) {
-        panel.append('<div id="vertical_text">'+event_name_text+'</div>').fadeIn(1000);
-        // panel.fadeIn(1000, function() {
-        //   $(this).append('<div id="vertical_text">'+event_name_text+'</div>');
-        // })
+        // if (panel.data("has_vertical_text") != true) {
+          $('<div id="vertical_text">'+event_name_text+'</div>').hide().appendTo(panel).fadeIn(2000);
+          $(panel).data("has_vertical_text", true);
+        // }
       }
 
-      var removeVerticalName = function(text) {
-        text.remove();
+      var removeVerticalName = function(panel, text_selector) {
+        // if (panel.data("has_vertical_text") == true) {
+          text_selector.remove();
+          $(panel).data("has_vertical_text", false);
+        // }
       }
       
     </script>
