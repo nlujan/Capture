@@ -1,3 +1,9 @@
+$.getScript("capture.js", function(){
+
+   // alert("Script loaded and executed.");
+   // Here you can use anything you defined in the loaded script
+});
+
 $(function() {
 
 	var openTabIndex;
@@ -44,6 +50,7 @@ $(function() {
 			}
 		});
 		$("#accordian").zAccordion("trigger",index);
+		clickedFrame();
 	});
 
 
