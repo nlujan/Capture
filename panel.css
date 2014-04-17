@@ -110,7 +110,7 @@
 }
 
 .panel_button {
-	width: 200px;
+	width: 25%;
 	height: 40px;
 	background-color: rgba(94,171,196,0.7);
 	color: white;
@@ -151,7 +151,7 @@
 }
 
 .upload_button {
-	margin-left: -100px;
+	margin-left: -12.5%;
 	left: 50%;
 	bottom: 50px;
 }
