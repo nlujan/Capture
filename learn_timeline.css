@@ -1,9 +1,10 @@
 
 #cover-photo-container {
-  background-image: url("images/test_cover_photo.jpg");
+  background-image: url("wedding_photo_0.jpg");
   height: 350px;
   width: 100%;
   position: absolute;
+  background-position: center;
   top:0;
   left:0;
   -webkit-background-size: 100% auto;
@@ -331,10 +332,7 @@
     .timeline-inverted .timeline-content-container header {
       float:left;
     }
-
-    .timeline-inverted .timeline-item-content {
-      clear:both;
-    }
+    
       .date-posted {
         margin-right: 10px;
         display: block;
@@ -370,6 +368,7 @@
         margin: 20px 0 20px 10px;
         padding: 0 10px 20px 0;
         font-size:32px;
+        clear: both;
       }
 
       .timeline-item-content img {
