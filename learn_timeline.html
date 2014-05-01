@@ -5,22 +5,32 @@
   <!-- Parallex Scrolling functionality -->
   <script>
   $(document).ready(function(){
+    var originalTitleTopPos = parseFloat($("#event-title").css('top'));
 
     $(window).scroll(function(e){
       var scrolled = $(window).scrollTop();
-      parallax();
+      parallax(scrolled);
     });
 
-    var parallax = function() {
-      var scrolled = $(window).scrollTop();
-      $("#cover-photo-container").css('top', (scrolled*0.3)+'px');
+    var parallax = function(scrolled) {
+     var newTitleTopPos, titleOpacityPercent;
+
+     newTitleTopPos = Math.max(originalTitleTopPos + (0.1 * scrolled), originalTitleTopPos);
+     titleOpacityPercent = 1 - (scrolled / 750);
+    
+     $("#event-title").css('top', newTitleTopPos + 'px');
+     $("#event-title").css('opacity', titleOpacityPercent)
     }
   });
   </script>
 </head>
 <body>
   <header id="cover-photo-container" data-type="cover_photo">
+    <section id="event-title">
+      <h1> The Proposal </h1>
+    </section> 
   </header>
+
   <div id="container">
     <ul class="timeline">
         <li>
