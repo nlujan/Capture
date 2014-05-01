@@ -11,7 +11,24 @@
      -moz-background-size: 100% auto;
         background-size: 100% auto;
   background-repeat: no-repeat;
+  text-align: center;
 }
+
+#event-title {
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+  top: 60%;
+  color: #fff;
+}
+  #event-title h1 {
+    font-weight: 700;
+    font-size: 50px;
+    font-style: normal;
+    letter-spacing: -0.04em;
+    margin-bottom: 8px;
+    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;"
+  }
 
 #container {
   position: absolute;
