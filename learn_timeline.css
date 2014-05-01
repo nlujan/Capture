@@ -1,7 +1,7 @@
 
 #cover-photo-container {
   background-image: url("wedding_photo_0.jpg");
-  height: 750px;
+  height: 710px;
   width: 100%;
   position: absolute;
   background-position: center;
@@ -9,10 +9,22 @@
   left:0;
   -webkit-background-size: 100% auto;
      -moz-background-size: 100% auto;
-        background-size: 100% auto;
+          background-size: 100% auto;
   background-repeat: no-repeat;
   text-align: center;
 }
+
+  #cover-photo-container:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: -webkit-linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.8));
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.8));
+  }
 
 #event-title {
   position: relative;
@@ -30,10 +42,21 @@
     font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;"
   }
 
+#arrow {
+  position: relative;
+  top: 75%;
+}
+
+#arrow-img {
+  width: 50px;
+  opacity: 0.5;
+}
+
+
 #container {
   position: absolute;
   left: 0px;
-  top: 750px;
+  top: 710px;
   width: 100%;
   background-color: #f6f6f6;
 }
