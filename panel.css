@@ -1,26 +1,23 @@
 #panel {
-	background-position: center center;
-	/*height: 600px;
-	width: 800px;*/
 	height: 100%;
 	width: 100%;
 	bottom: 100%;
 	border: 1px solid;
 	position: relative;
-/*	height: 600px;
-	width: 600px;*/
+	background-size: cover;
+	-webkit-background-size: cover;
 }
 
 .panel0 {
-	background-image: url("wedding_photo_0.jpg");
+	background: url("wedding_photo_0.jpg") no-repeat center center fixed;
 }
 
 .panel1 {
-	background-image: url("wedding_photo_1.jpg");
+	background: url("wedding_photo_1.jpg") no-repeat center center fixed;
 }
 
 .panel2 {
-	background-image: url("wedding_photo_2.jpg");
+	background: url("wedding_photo_2.jpg") no-repeat center center fixed;
 }
 
 #panel #title_screen {
@@ -93,6 +90,12 @@
 }
 
 #panel .time {
+	font-size: 15px;
+	font-weight: 200;
+	border-radius: 3px;
+}
+
+#panel .date {
 	font-size: 15px;
 	font-weight: 200;
 	border-radius: 3px;
