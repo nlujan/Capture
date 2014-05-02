@@ -5,8 +5,9 @@
     <title>Panel</title>
     <link rel="stylesheet" type="style/css" href="panelOld.css">
     <link rel="stylesheet" type="style/css" href="simptip.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui-1.10.4.custom/css/custom-theme/jquery-ui-1.10.4.custom.css" />
     <script type="text/javascript" src="jquery/js/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
     <script>
       $(document).ready(function() {
         $("#invite_screen").addClass("hide_panel");
@@ -19,6 +20,11 @@
           $("#invite_screen").addClass("hide_panel");
           $("#panel").removeClass("blur");
         });
+        $(".date").datepicker({
+          dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+        });
+        $(".date").datepicker("setDate", new Date());
+        // $(".time").timepicker();
       });
     </script>
   </head>
@@ -31,17 +37,15 @@
         <div class="timeline_link">
         </div>
       </a> -->
-      <a href="google.com">
       <div href="google.com" id="title_screen">
         <div class="title_event_name simptip-position-right simptip-movable simptip-smooth" data-tooltip="Rename"><input type="text" class="input_title event_name" value="Event Name" /></div>
-        <div class="title_address simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Address"><input type="text" class="input_title address" value="Address" /></div>
-        <div class="title_date simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Date"><input type="date" class="input_title time" value="Date" /></div>
+        <div class="title_address simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Address"><input type="text" class="input_title address" value="Address" onclick="this.select();"/></div>
+        <div class="title_date simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Date"><input type="text" class="input_title date" value="Date" /></div>
         <div class="title_time simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Time"><input type="time" class="input_title time" value="Time" /></div>
         <div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Delete Event">
           <img class="delete_inner" src="icon_304/icon_304.png" />
         </div>
       </div>
-      </a>
       <button class="panel_button timeline_button" onclick="window.location.href='learn_timeline.html'">Timeline</button>
       <button class="panel_button invite_button">Invite</button>
       <button class="panel_button upload_button">Upload</button>

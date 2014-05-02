@@ -98,6 +98,12 @@
 	border-radius: 3px;
 }
 
+#panel .date {
+	font-size: 15px;
+	font-weight: 200;
+	border-radius: 3px;
+}
+
 #delete {
 	height: 20px;
 	width: 20px;
