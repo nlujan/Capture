@@ -4,22 +4,27 @@ $.getScript("capture.js", function(){
    // Here you can use anything you defined in the loaded script
 });
 
-$(function() {
-
+$(document).ready(function() {
 	var openTabIndex;
 
-	$("#accordian").zAccordion({
+	$("#events").zAccordion({
 		startingSlide: 0,
 		auto: false,
-		slideWidth: "70%",
+		tabWidth: '5%',
 		width: "100%",
-		height: 500,
+		height: "100%",
 		trigger: "mousedown"
 	});
+	$(window).resize(function() {
+		$("#events").height($(window).height());
+		$("#events li").height($(window).height());
+		$("#events img").height($(window).height());
+	});
+
 
 	var tabIndex = function(){
 		var index = 0;
-		$("#accordian div").each(function(){
+		$("#events li").each(function(){
 			if ($(this).hasClass("frame-open")){
 				openTabIndex = index;
 			}
@@ -29,33 +34,25 @@ $(function() {
 		});
 	};
 
-
-	var counter = 0
 	$("#addButton").click(function() {
-		var index = $("#accordian").children().length;
+		var index = $("#events").children().length;
 		tabIndex();
-		$("#accordian").append("<div><img src='images/slide3.gif' width='100%' height='100%' alt='' /></div>");
-		$("#accordian").zAccordion("destroy", {
+		$("#events").append("<li><img src='images/slide0.gif' width='100%' height='100%' alt='' /></li>");
+		$("#events").zAccordion("destroy", {
 			removeStyleAttr: true, /* This attribute will default to true and remove all inline styles. */
 			removeClasses: true, /* This attribute will default to false and remove any classes that have been set by zAccordion. */
 			destroyComplete: {
 				rebuild: {
-					// startingSlide: openTabIndex,
+					startingSlide: openTabIndex,
 					auto: false,
-					slideWidth: "70%",
+					tabWidth: '5%',
 					width: "100%",
-					height: 500,
+					height: "100%",
 					trigger: "mousedown"
 				}
 			}
 		});
-		$("#accordian").zAccordion("trigger",index);
+		$("#events").zAccordion("trigger",index);
 		clickedFrame();
 	});
-
-
-
-
-	// });
-
 });
