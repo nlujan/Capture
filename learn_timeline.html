@@ -32,11 +32,6 @@
     originalTitleTopPos = parseFloat($("#event-title").css('top'));
     originalArrowTopPos = parseFloat($("#arrow").css('top'));
 
-    $(window).scroll(function(e){
-      var scrolled = $(window).scrollTop();
-      parallax(scrolled);
-    });
-
     var parallax = function(scrolled) {
      var newTitleTopPos, newArrowTopPos, titleOpacityPercent, arrowOpacityPercent;
 
@@ -50,6 +45,49 @@
      $("#arrow").css('top', newArrowTopPos + 'px');
      $("#arrow").css('opacity', arrowOpacityPercent);
     }
+
+    var togglePicModal = function() {
+
+      var visibility, modal;
+
+      modal = $("#timeline-picture-modal");
+      visibility = (modal.css('visibility') == 'visible') ? 'hidden' :'visible';
+      $("#timeline-picture-modal").css('visibility', visibility);
+    }
+
+     var setUpModal = function(src, caption, profilePic) {
+      var mainImg, profileImg;
+
+      mainImg = $('<img src='+src+' />');
+      profileImg = $('<img src='+profilePic+' />')
+
+      $('#main-image').empty().append(mainImg);
+      $('#modal-info-panel #image-caption').empty().append(
+        caption);
+      $('#ifh-profile-pic').empty().append(profileImg);
+      togglePicModal();
+    }
+
+    $(window).scroll(function(e){
+      var scrolled = $(window).scrollTop();
+      parallax(scrolled);
+    });
+
+    $(".timeline-media-content").click(function(){
+      var src, caption, profilePic;
+
+      src = $(this).attr('src');
+      caption = $(this).parent().parent().find($(".timeline-text-content")).text();
+    
+      profilePic = $(this).parent().parent().parent().find($(".timeline-profile-pic-badge")).find("img").attr('src');
+
+      setUpModal(src, caption, profilePic);
+    }); 
+
+    $("#close-timeline-modal").click(function(){
+      togglePicModal();
+    });
+
   });
   </script>
 </head>
@@ -81,8 +119,8 @@
                <section class="timeline-text-content">
                 Someone said something funny
                </section>
-               <section class="timeline-media-content">
-                <img src="wedding_photo_2.jpg" alt="A posted content"/>
+               <section class="timeline-media-container">
+                <img class="timeline-media-content" src="wedding_photo_2.jpg" alt="A posted content"/>
                </section>
             </div>
 
@@ -103,7 +141,7 @@
                <section class="timeline-text-content">
                 <span> Someone said something funny </span>
                </section>
-               <section class="timeline-media-content"></section>
+               <section class="timeline-media-container"></section>
             </div>
 
           </article>
@@ -121,8 +159,8 @@
                 <span class="date-posted">Shared - May 4, 6:53 pm </span>
                </header>
                <section class="timeline-text-content"></section>
-               <section class="timeline-media-content">
-                <img src="wedding_photo_2.jpg" alt="A posted content"/>
+               <section class="timeline-media-container">
+                <img class="timeline-media-content" src="wedding_photo_2.jpg" alt="A posted content"/>
                </section>
             </div>
 
@@ -141,8 +179,8 @@
                 <span class="date-posted">Shared - May 4, 6:53 pm </span>
                </header>
                <section class="timeline-text-content"></section>
-               <section class="timeline-media-content">
-                <img src="wedding_photo_1.jpg" alt="A posted content"/>
+               <section class="timeline-media-container">
+                <img class="timeline-media-content" src="wedding_photo_1.jpg" alt="A posted content"/>
                </section>
             </div>
 
@@ -159,7 +197,7 @@
                 <span class="date-posted">Shared - May 4, 6:53 pm </span>
                </header>
                <section class="timeline-text-content"> Someone said something funny</section>
-               <section class="timeline-media-content">
+               <section class="timeline-media-container">
                 
                </section>
             </div>
@@ -169,5 +207,32 @@
         <li class="clearfix" style="float: none;"></li>
     </ul>
 </div>
+
+<!-- Modal for viewing picures -->
+  <div id="timeline-picture-modal">
+    <div id="modal-info-panel">
+      <div id="info-panel-heading">
+        <span id="ifh-profile-pic"><img src="images/profile_pic.jpg"/></span>
+        <div id="posting-info">
+          <section id="user-name"><strong>Moti Ogunshina</strong></section>
+          <section id="date-posted">Shared - May 4, 6:50pm</section>
+        </div>
+
+      </div>
+      <section id="image-caption">
+        Somebody said something funny
+      </section>
+    </div> 
+
+    <div id="modal-image-panel">
+      <header>
+        <img id="close-timeline-modal" src="images/close_button.png"/>
+      </header>
+      <section id="main-image"></section>
+     
+    </div>
+
+    
+  </div>
 </body>
 </html>
