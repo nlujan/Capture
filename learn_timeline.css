@@ -226,6 +226,8 @@
 
       #modal-image-panel #main-image img {
         max-width: 900px;
+        margin: 0 auto;
+        display:block;
       }
 
     #modal-image-panel header {
