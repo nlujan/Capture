@@ -28,7 +28,6 @@ $(document).ready(function() {
 		$("#events").height($(window).height());
 		$("#events li").height($(window).height());
 		$("#events img").height($(window).height());
-
 	});
 
 
@@ -45,6 +44,20 @@ $(document).ready(function() {
 	};
 
 	$("#addButton").click(function() {
+		$("#hamburger").fadeToggle( "slow", "linear" )
+
+    	//enable all scrolling on mobile devices when menu is closed
+    	jQuery('#container').unbind('touchmove');
+
+    	//set margin for the whole container back to original state with a jquery UI animation
+    	jQuery("#container").animate({"marginLeft": ["0", 'easeOutExpo']}, {
+        	duration: 700,
+        	complete: function() {
+              	jQuery('#content').css('width', 'auto');
+            	jQuery('#contentLayer').css('display', 'none');
+
+        }
+        });
 		var index = $("#events").children().length;
 		tabIndex();
 		$("#events").append("<li><img src='images/slide0.gif' width='100%' height='100%' alt='' /></li>");

@@ -1,6 +1,6 @@
 /* Just some styles to set the page layout. */
 * {
-	margin:0;padding:0;font-family:Arial, Verdana, sans-serif;
+	margin:0;padding:0;font-family:Verdana, sans-serif;
 }
 body {
 	padding:0;line-height:20px;font-size:12px;color:#000;
@@ -38,7 +38,20 @@ pre.html {
 	width:100%;
 	
 }
+
 #addButton{
+	width:80%;
+	position:relative;
+	height:20px;
+	background: #28B78D;
+	cursor: pointer;
+	border: none;
+	border-radius:3px;
+	color:white;
+	font-family:"Verdana",
+}
+
+/*#addButton{
 	position: relative;
 	float: right;
 	width:7%;
@@ -47,7 +60,7 @@ pre.html {
 	cursor: pointer;
 	border: none;
 
-}
+}*/
 #addButton:hover{
     background: #1C8063;
 
