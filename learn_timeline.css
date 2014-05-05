@@ -1,4 +1,8 @@
-#mainContainer{
+#contentContainer{
+  height:100%;
+}
+#hamburgerContainer{
+  height:100%;
 }
 #hamburger {
     z-index: 1;

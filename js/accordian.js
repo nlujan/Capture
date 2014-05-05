@@ -28,6 +28,7 @@ $(document).ready(function() {
 		$("#events").height($(window).height());
 		$("#events li").height($(window).height());
 		$("#events img").height($(window).height());
+
 	});
 
 

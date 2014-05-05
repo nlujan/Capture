@@ -14,6 +14,7 @@ html, body{
 }
 #container{
 	height:100%;
+	overflow: hidden;
 }
 #content {
 	height:100%;
@@ -34,7 +35,7 @@ pre.html {
 	height:100%;
 	position: relative;
 	float: left;
-	width:93%;
+	width:100%;
 	
 }
 #addButton{
@@ -75,14 +76,6 @@ pre.html {
     width: 25px;
     margin-top:15px;
     margin-left: 15px;
-/*    background: #4569b2;
-    background: -moz-linear-gradient(top,  #4569b2 0%, #4062a5 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4569b2), color-stop(100%,#4062a5));
-    background: -webkit-linear-gradient(top,  #4569b2 0%,#4062a5 100%);
-    background: -o-linear-gradient(top,  #4569b2 0%,#4062a5 100%);
-    background: -ms-linear-gradient(top,  #4569b2 0%,#4062a5 100%);
-    background: linear-gradient(to bottom,  #4569b2 0%,#4062a5 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4569b2', endColorstr='#4062a5',GradientType=0 );*/
 }
 
 #hamburger div {
@@ -96,7 +89,7 @@ pre.html {
 nav {
     left: 0px;
     top: 0px;
-    position: fixed;
+    position: absolute;
     z-index: 0;
     width: 10%;
     height: 100%;
@@ -138,12 +131,11 @@ nav li a {
     display: none;
     height: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     position: absolute;
     right: 0;
     top: 0;
     width: 90%;
     z-index: 1000;
-    min-height: 1062px;
 }
 
