@@ -164,8 +164,18 @@ nav li a {
 	color:white;
 	font-family: "Verdana";
 	font-size: 80px ;
-	margin-top:10%;
-	margin-left: 25%;
+	text-align:center;
+	margin-top: 20%;
+}
+
+#initialPage p{
+	color:white;
+	font-family: "Verdana";
+	font-size: 30px;
+ 	margin-top: 2%;
+/*	margin-left: 35%;*/
+	text-align:center;
+	position:relative;
 }
 .mobileNav{
 }
