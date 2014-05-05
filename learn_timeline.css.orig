@@ -100,6 +100,7 @@ so that the content is unclickable while menu is shown
 
 /*this is the end of the hamburger styling*/
 
+/* Cover Photo Elements */ 
 #cover-photo-container {
   background-image: url("wedding_photo_0.jpg");
   height: 710px;
@@ -308,6 +309,9 @@ so that the content is unclickable while menu is shown
         left: -35px;
       }
 
+<<<<<<< HEAD
+
+=======
   /* View pictures modal */
   #timeline-picture-modal {
     visibility: hidden;
@@ -376,3 +380,4 @@ so that the content is unclickable while menu is shown
     margin: 30px 0 0 20px;
   }
     
+>>>>>>> 53e36d512de0845bf46ab00fe18a90436b40f72c

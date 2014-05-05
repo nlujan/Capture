@@ -47,49 +47,7 @@
      $("#arrow").css('opacity', arrowOpacityPercent);
     }
 
-    var togglePicModal = function() {
-
-      var visibility, modal;
-
-      modal = $("#timeline-picture-modal");
-      visibility = (modal.css('visibility') == 'visible') ? 'hidden' :'visible';
-      $("#timeline-picture-modal").css('visibility', visibility);
-    }
-
-     var setUpModal = function(src, caption, profilePic) {
-      var mainImg, profileImg;
-
-      mainImg = $('<img src='+src+' />');
-      profileImg = $('<img src='+profilePic+' />')
-
-      $('#main-image').empty().append(mainImg);
-      $('#modal-info-panel #image-caption').empty().append(
-        caption);
-      $('#ifh-profile-pic').empty().append(profileImg);
-      togglePicModal();
-    }
-
-    $(window).scroll(function(e){
-      var scrolled = $(window).scrollTop();
-      parallax(scrolled);
-    });
-
-    $(".timeline-media-content").click(function(){
-      var src, caption, profilePic;
-
-      src = $(this).attr('src');
-      caption = $(this).parent().parent().find($(".timeline-text-content")).text();
-    
-      profilePic = $(this).parent().parent().parent().find($(".timeline-profile-pic-badge")).find("img").attr('src');
-
-      setUpModal(src, caption, profilePic);
-    }); 
-
-    $("#close-timeline-modal").click(function(){
-      togglePicModal();
-    });
-
-
+<<<<<<< HEAD
 
     jQuery("#hamburger").click(function() {
 
@@ -132,6 +90,50 @@
 
 
 
+=======
+    var togglePicModal = function() {
+
+      var visibility, modal;
+
+      modal = $("#timeline-picture-modal");
+      visibility = (modal.css('visibility') == 'visible') ? 'hidden' :'visible';
+      $("#timeline-picture-modal").css('visibility', visibility);
+    }
+
+     var setUpModal = function(src, caption, profilePic) {
+      var mainImg, profileImg;
+
+      mainImg = $('<img src='+src+' />');
+      profileImg = $('<img src='+profilePic+' />')
+
+      $('#main-image').empty().append(mainImg);
+      $('#modal-info-panel #image-caption').empty().append(
+        caption);
+      $('#ifh-profile-pic').empty().append(profileImg);
+      togglePicModal();
+    }
+
+    $(window).scroll(function(e){
+      var scrolled = $(window).scrollTop();
+      parallax(scrolled);
+    });
+
+    $(".timeline-media-content").click(function(){
+      var src, caption, profilePic;
+
+      src = $(this).attr('src');
+      caption = $(this).parent().parent().find($(".timeline-text-content")).text();
+    
+      profilePic = $(this).parent().parent().parent().find($(".timeline-profile-pic-badge")).find("img").attr('src');
+
+      setUpModal(src, caption, profilePic);
+    }); 
+
+    $("#close-timeline-modal").click(function(){
+      togglePicModal();
+    });
+
+>>>>>>> 53e36d512de0845bf46ab00fe18a90436b40f72c
   });
   </script>
 </head>
@@ -276,6 +278,10 @@
         <li class="clearfix" style="float: none;"></li>
     </ul>
 </div>
+<<<<<<< HEAD
+</div>
+</div>
+=======
 
 <!-- Modal for viewing picures -->
   <div id="timeline-picture-modal">
@@ -303,5 +309,6 @@
 
     
   </div>
+>>>>>>> 53e36d512de0845bf46ab00fe18a90436b40f72c
 </body>
 </html>
