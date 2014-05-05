@@ -9,15 +9,15 @@
 }
 
 .panel0 {
-	background: url("wedding_photo_0.jpg") no-repeat center center fixed;
+	background: url("wedding_photo_0.jpg") no-repeat center center;
 }
 
 .panel1 {
-	background: url("wedding_photo_1.jpg") no-repeat center center fixed;
+	background: url("wedding_photo_1.jpg") no-repeat center center;
 }
 
 .panel2 {
-	background: url("wedding_photo_2.jpg") no-repeat center center fixed;
+	background: url("wedding_photo_2.jpg") no-repeat center center;
 }
 
 #panel #title_screen {
