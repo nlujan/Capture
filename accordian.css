@@ -152,3 +152,21 @@ nav li a {
     z-index: 1000;
 }
 
+#initialPage{
+	width:100%;
+	height:100%;
+	background-color:#28B78D;
+	position:relative;
+	float:left;
+
+}
+#title{
+	color:white;
+	font-family: "Verdana";
+	font-size: 80px ;
+	margin-top:10%;
+	margin-left: 25%;
+}
+.mobileNav{
+}
+

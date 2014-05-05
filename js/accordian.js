@@ -38,6 +38,7 @@ $(document).ready(function() {
 	};
 
 	$("#addButton").click(function() {
+		$("#initialPage").hide();
 		$("#hamburger").fadeToggle( "slow", "linear" )
 
     	//enable all scrolling on mobile devices when menu is closed
