@@ -101,7 +101,7 @@
 	border-radius: 3px;
 }
 
-#delete {
+#delete_event {
 	height: 20px;
 	width: 20px;
 	border-radius: 4px;
@@ -113,8 +113,8 @@
 	font-family: "Gill Sans";
 }
 
-.delete_inner {
-	height: 20px;
+.delete_event_inner {
+	height: 20px !important;
 }
 
 .cancel {
