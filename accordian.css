@@ -156,27 +156,63 @@ nav li a {
 #initialPage{
 	width:100%;
 	height:100%;
-	background-color:#28B78D;
+	background-color: white;
 	position:relative;
 	float:left;
 
 }
 #title{
 	color:white;
-	font-family: "Verdana";
+	font-family: "Helvetica";
+    font-weight: 100;
 	font-size: 80px ;
 	text-align:center;
-	margin-top: 20%;
+	margin-top: 15%;
+    position: relative;
+    bottom: 100%;
 }
 
 #initialPage p{
 	color:white;
-	font-family: "Verdana";
-	font-size: 30px;
- 	margin-top: 3%;
+	font-family: "Helvetica";
+    font-weight: 100;
+	font-size: 36px;
+ 	margin-top: 8%;
 	text-align:center;
 	position:relative;
+    bottom: 100%;
 }
 .mobileNav{
 }
+
+#cover_video {
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+    /*position: fixed;*/
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: ;
+    background-color: #06ba8f;
+    background-size: cover;
+}
+
+#video_screen {
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#theme {
+    color: #06ba8f;
+}
+
+
+
 
