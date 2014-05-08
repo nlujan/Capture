@@ -3,5 +3,11 @@
 </head>
 
 <body>
-	<h1> Welcome to Capture l </h1>
+	<h1> Welcome to Capture </h1>
+	{{> loginButtons}}
+	{{> userInfo}}
 </body>
+
+<template name="userInfo">
+	<p> Welcome {{userEmail}} </p>
+</template>
