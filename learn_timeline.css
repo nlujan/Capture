@@ -8,12 +8,18 @@
   background-position: center;
   top:0;
   left:0;
-  -webkit-background-size: 100% auto;
-     -moz-background-size: 100% auto;
-          background-size: 100% auto;
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100% 100%;
+          background-size: 100% 100%;
   background-repeat: no-repeat;
   text-align: center;
 }
+
+/*@media screen and (max-height: 710px) {
+  #cover-photo-container {
+    height: 100%;
+  }
+}*/
 
   #cover-photo-container:before {
     content: "";
@@ -64,21 +70,29 @@
 }
 
   .timeline {
-    width: 980;
+    width: 980px;
     list-style: none;
     padding: 50px 0 20px;
     position: relative;
     margin: 0 auto;
   }
+
+  @media screen and (max-width: 980px){
+    .timeline {
+      width: 440px;
+    }
+  }
   
-  .timeline:before {
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    content: " ";
-    width: 3px;
-    background-color: #eeeeee;
-    left: 50%;
+  @media screen and (min-width: 980px) {
+    .timeline:before {
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      content: " ";
+      width: 3px;
+      background-color: #eeeeee;
+      left: 50%;
+    }
   }
   
   .timeline > li {
@@ -100,10 +114,12 @@
       clear: both;
     }
 
-    .timeline > li.timeline-inverted{
-      float: right; 
-      clear: right;
-      margin: 100px 0 30px 0;
+    @media screen and (min-width: 980px){
+      .timeline > li.timeline-inverted{
+        float: right; 
+        clear: right;
+        margin: 100px 0 30px 0;
+      }
     }
 
   /* Elements regarding content */
@@ -129,21 +145,37 @@
       padding-top: 10px;
     }
 
+    .profile-pic-container {
+      position: relative;
+      float: left;
+      margin: 0 20px 10px 0;
+      
+    }
+
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 30px;
+
+    }
+
     .timeline-inverted .timeline-content-container {
        
     }
 
-    .timeline-content-container:before {
-        position: absolute;
-        top: 26px;
-        right: -10px;
-        display: inline-block;
-        border-top: 15px solid transparent;
-        border-left: 15px solid #fff;
-        border-right: 0 solid #fff;
-        border-bottom: 15px solid transparent;
-        content: " ";
+    @media screen and (min-width: 980px) {
+      .timeline-content-container:before {
+          position: absolute;
+          top: 26px;
+          right: -10px;
+          display: inline-block;
+          border-top: 15px solid transparent;
+          border-left: 15px solid #fff;
+          border-right: 0 solid #fff;
+          border-bottom: 15px solid transparent;
+          content: " ";
 
+      }
     }
 
     .timeline-inverted .timeline-content-container:before {
@@ -198,6 +230,12 @@
         text-align: center;
         border-radius: 40px;
       }
+
+        @media screen and (max-width: 980px) {
+          .timeline-profile-pic-badge {
+            visibility: hidden;
+          }
+        }
 
         .timeline-profile-pic-badge img {
           position: relative;

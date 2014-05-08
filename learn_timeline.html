@@ -88,6 +88,54 @@
       togglePicModal();
     });
 
+    /* Help with responsiveness */
+    var addedProfilePic = false;
+    initializeForWindowSize();
+
+    $(window).bind("resize", resizeWindow);
+
+    function resizeWindow(e) { 
+      var newWindowWidth = $(window).width();
+      
+      if (newWindowWidth < 980) {
+        if (!addedProfilePic) {
+          addedProfilePic = true;
+          addProfilePic();
+        }
+      }
+
+      else {
+        if (addedProfilePic) {
+          removeProfilePic();
+        }
+        addedProfilePic = false;
+      }
+    }
+
+    function initializeForWindowSize() {
+      if ($(window).width()  < 980) {
+        addedProfilePic = true;
+        addProfilePic();
+      }
+    }
+
+    function addProfilePic() {
+       $(".timeline-content-container header").each(function(index){
+              var newSection = $('<section class="profile-pic-container"></section>');
+
+              newSection.append($('<img class="profile-pic" src="wedding_photo_1.jpg" />'));
+             
+              $(this).prepend(newSection);
+         });
+    }
+
+    function removeProfilePic() {
+      $(".timeline-content-container header").each(
+        function(){
+          $(this).children().first().remove();
+        });
+    }
+
   });
   </script>
 </head>
@@ -112,7 +160,10 @@
             </div>
             <div class="timeline-content-container">
               <header>
-                <!--<img class="profile-pic" src="profile_pic.jpg" alt="The poster's profile picture"/> -->
+               <!-- <section class="profile-pic-container">
+                  <img class="profile-pic" src="wedding_photo_1.jpg"/>
+                </section> -->
+                
                 <section><strong> Moti Ogunshina </strong></section>
                 <section class="date-posted">Shared - May 4, 6:53 pm </section>
                </header>
