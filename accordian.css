@@ -11,6 +11,7 @@ html, body{
     padding:0px;
     margin:0px;
     position:relative;
+    background-color: #243743;
 }
 #container{
 	height:100%;

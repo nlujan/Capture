@@ -1,13 +1,14 @@
 $(document).ready(function() {
 	var openTabIndex;
+	var eventCount = 0;
 
 
-	// $("#hamburger").hover(function(){
- //         $("#hamburger div").css("border", "1px solid black");
- //     }, function() {
- //    // on mouseout, reset the background colour
- //    $("#hamburger div").css("border", "1px solid white");
- //    });
+	$("#hamburger").hover(function(){
+         $("#hamburger div").css("border", "1px solid #D8D8D8");
+     }, function() {
+    // on mouseout, reset the background colour
+    $("#hamburger div").css("border", "1px solid white");
+    });
     
 
 	$("#events").zAccordion({
@@ -39,6 +40,7 @@ $(document).ready(function() {
 
 	$("#addButton").click(function() {
 		$("#initialPage").hide();
+		//hideWelcome();
 		$("#hamburger").fadeToggle( "slow", "linear" )
 
     	//enable all scrolling on mobile devices when menu is closed
@@ -67,14 +69,14 @@ $(document).ready(function() {
 					width: "100%",
 					height: "100%",
 					trigger: "mousedown"
-				}
-			}
+				},			
+			},
 		});
 		$("#events").zAccordion("trigger",index);
 		// clickedFrame();
 		createNewFrame();
-	});
 
+	});
 
 	jQuery("#hamburger").click(function() {
 		$("#hamburger").fadeToggle( "slow", "linear" )
