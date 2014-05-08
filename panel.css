@@ -20,6 +20,14 @@
 	background: url("wedding_photo_2.jpg") no-repeat center center;
 }
 
+.panel3 {
+	background: url("wedding_photo_3.jpg") no-repeat center center;
+}
+
+.panel4 {
+	background: url("wedding_photo_4.jpg") no-repeat center center;
+}
+
 #panel #title_screen {
 	background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0), rgba(0,0,0,0.5));
 	background: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0), rgba(0,0,0,0.5));
@@ -130,7 +138,8 @@
 .panel_button {
 	width: 15%;
 	height: 35px;
-	background-color: rgba(94,171,196,0.7);
+	/*background-color: rgba(94,171,196,0.7);*/
+	background-color: #048969;
 	color: white;
 	border: none;
 	font-size: 23px;
@@ -144,17 +153,18 @@
 }
 
 .panel_button:hover {
-	background-color: rgba(94,171,196,1.0);
+	/*background-color: rgba(94,171,196,1.0);*/
+	background-color: #06ba8f;
 	transition: background-color 0.25s;
 	-webkit-transition: background-color 0.25s;
 }
 
 #invite_screen .panel_button {
-	background-color: rgba(119,77,33,0.7);
+	background-color: #048969;
 }
 
 #invite_screen .panel_button:hover {
-	background-color: rgba(119,77,33,1.0);
+	background-color: #06ba8f;
 	transition: background-color 0.25s;
 	-webkit-transition: background-color 0.25s;
 }
@@ -184,13 +194,13 @@
 }
 
 .inviteNested_button {
-	left: 15%;
-	bottom: 20%;
+	left: 31%;
+	bottom: 35%;
 }
 
 .inviteToAll_button {
-	right: 15%;
-	bottom: 20%;
+	left: 54%;
+	bottom: 35%;
 }
 
 .blur {
@@ -222,12 +232,19 @@
 }
 
 .email_list {
-	height: 150px;
-	width: 70%;
+	height: 100px;
+	width: 38%;
 	position: absolute;
-	top: 30%;
-	margin-left: -35%;
+	top: 35%;
+	margin-left: -19%;
 	left: 50%;
+	font-size: 14px;
+	font-family: "Helvetica";
+}
+
+
+.email_list:focus {
+	outline: 0;
 }
 
 #gray_screen {
