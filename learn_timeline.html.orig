@@ -47,50 +47,6 @@
      $("#arrow").css('opacity', arrowOpacityPercent);
     }
 
-<<<<<<< HEAD
-
-    jQuery("#hamburger").click(function() {
-
-        //set the width of primary content container -> content should not scale while animating
-        var contentWidth = jQuery('#contentContainer').width();
-
-        //set the content with the width that it has originally
-        jQuery('#contentContainer').css('width', contentWidth);
-
-        //display a layer to disable clicking and scrolling on the content while menu is shown
-        jQuery('#contentLayer').css('display', 'block');
-
-        //disable all scrolling on mobile devices while menu is shown
-        jQuery('#hamburgerContainer').bind('touchmove', function(e){e.preventDefault()});
-
-
-        //set margin for the whole container with a jquery UI animation
-        jQuery('#hamburgerContainer').animate({"marginLeft": ["70%", 'easeOutExpo']}, {
-            duration: 700
-        });
-    });
-
-    //close the menu
-    jQuery("#contentLayer").click(function() {
-
-        //enable all scrolling on mobile devices when menu is closed
-        jQuery('#hamburgerContainer').unbind('touchmove');
-
-        //set margin for the whole container back to original state with a jquery UI animation
-        jQuery("#hamburgerContainer").animate({"marginLeft": ["0", 'easeOutExpo']}, {
-            duration: 700,
-            complete: function() {
-                  jQuery('#container').css('width', 'auto');
-                jQuery('#contentLayer').css('display', 'none');
-
-            }
-        });
-    });
-
-
-
-
-=======
     var togglePicModal = function() {
 
       var visibility, modal;
@@ -133,7 +89,99 @@
       togglePicModal();
     });
 
->>>>>>> 53e36d512de0845bf46ab00fe18a90436b40f72c
+<<<<<<< HEAD
+    /* Help with responsiveness */
+    var addedProfilePic = false;
+    initializeForWindowSize();
+
+    $(window).bind("resize", resizeWindow);
+
+    function resizeWindow(e) { 
+      var newWindowWidth = $(window).width();
+      
+      if (newWindowWidth < 980) {
+        if (!addedProfilePic) {
+          addedProfilePic = true;
+          addProfilePic();
+        }
+      }
+
+      else {
+        if (addedProfilePic) {
+          removeProfilePic();
+        }
+        addedProfilePic = false;
+      }
+    }
+
+    function initializeForWindowSize() {
+      if ($(window).width()  < 980) {
+        addedProfilePic = true;
+        addProfilePic();
+      }
+    }
+
+    function addProfilePic() {
+       $(".timeline-content-container header").each(function(index){
+              var newSection = $('<section class="profile-pic-container"></section>');
+
+              newSection.append($('<img class="profile-pic" src="wedding_photo_1.jpg" />'));
+             
+              $(this).prepend(newSection);
+         });
+    }
+
+    function removeProfilePic() {
+      $(".timeline-content-container header").each(
+        function(){
+          $(this).children().first().remove();
+        });
+    }
+=======
+
+
+    jQuery("#hamburger").click(function() {
+
+        //set the width of primary content container -> content should not scale while animating
+        var contentWidth = jQuery('#contentContainer').width();
+
+        //set the content with the width that it has originally
+        jQuery('#contentContainer').css('width', contentWidth);
+
+        //display a layer to disable clicking and scrolling on the content while menu is shown
+        jQuery('#contentLayer').css('display', 'block');
+
+        //disable all scrolling on mobile devices while menu is shown
+        jQuery('#hamburgerContainer').bind('touchmove', function(e){e.preventDefault()});
+
+
+        //set margin for the whole container with a jquery UI animation
+        jQuery('#hamburgerContainer').animate({"marginLeft": ["70%", 'easeOutExpo']}, {
+            duration: 700
+        });
+    });
+
+    //close the menu
+    jQuery("#contentLayer").click(function() {
+
+        //enable all scrolling on mobile devices when menu is closed
+        jQuery('#hamburgerContainer').unbind('touchmove');
+
+        //set margin for the whole container back to original state with a jquery UI animation
+        jQuery("#hamburgerContainer").animate({"marginLeft": ["0", 'easeOutExpo']}, {
+            duration: 700,
+            complete: function() {
+                  jQuery('#container').css('width', 'auto');
+                jQuery('#contentLayer').css('display', 'none');
+
+            }
+        });
+    });
+
+
+
+>>>>>>> master
+
   });
   </script>
 </head>
@@ -183,7 +231,10 @@
             </div>
             <div class="timeline-content-container">
               <header>
-                <!--<img class="profile-pic" src="profile_pic.jpg" alt="The poster's profile picture"/> -->
+               <!-- <section class="profile-pic-container">
+                  <img class="profile-pic" src="wedding_photo_1.jpg"/>
+                </section> -->
+                
                 <section><strong> Moti Ogunshina </strong></section>
                 <section class="date-posted">Shared - May 4, 6:53 pm </section>
                </header>
@@ -278,10 +329,6 @@
         <li class="clearfix" style="float: none;"></li>
     </ul>
 </div>
-<<<<<<< HEAD
-</div>
-</div>
-=======
 
 <!-- Modal for viewing picures -->
   <div id="timeline-picture-modal">
@@ -309,6 +356,5 @@
 
     
   </div>
->>>>>>> 53e36d512de0845bf46ab00fe18a90436b40f72c
 </body>
 </html>
