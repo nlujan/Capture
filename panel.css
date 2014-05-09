@@ -278,3 +278,35 @@
 .logo {
 	height: 150px;
 }
+
+.make_transparent {
+	position: absolute;
+	color: white;
+	background-color: #048969;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	cursor: pointer;
+	height: 35px;
+	border: none;
+	bottom: 50px;
+	font-size: 23px;
+	font-weight: 300;
+	width: 15%;
+}
+
+#upload_regular {
+	left: 400px;
+}
+
+#upload_timeline {
+	left: 600px;
+}
+
+#browse {
+	position: absolute;
+	bottom: 50px;
+	left: 150px;
+}
+
+
+
