@@ -1,0 +1,5 @@
+(function(){Accounts.ui.config ({
+	
+})
+
+})();
