@@ -9,23 +9,23 @@
 }
 
 .panel0 {
-	background: url("wedding_photo_0.jpg") no-repeat center center;
+	background: url("images/wedding_photo_0.jpg") no-repeat center center;
 }
 
 .panel1 {
-	background: url("wedding_photo_1.jpg") no-repeat center center;
+	background: url("images/wedding_photo_1.jpg") no-repeat center center;
 }
 
 .panel2 {
-	background: url("wedding_photo_2.jpg") no-repeat center center;
+	background: url("images/wedding_photo_2.jpg") no-repeat center center;
 }
 
 .panel3 {
-	background: url("wedding_photo_3.jpg") no-repeat center center;
+	background: url("images/wedding_photo_3.jpg") no-repeat center center;
 }
 
 .panel4 {
-	background: url("wedding_photo_4.jpg") no-repeat center center;
+	background: url("images/wedding_photo_4.jpg") no-repeat center center;
 }
 
 #panel #title_screen {
