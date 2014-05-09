@@ -1,9 +1,9 @@
 /* Just some styles to set the page layout. */
 * {
-	margin:0;padding:0;font-family:Verdana, sans-serif;
+	margin:0;padding:0;font-family: "Gill Sans";, sans-serif;
 }
 body {
-	padding:0;line-height:20px;font-size:12px;color:#000;
+	padding:0;line-height:20px;font-size:14px;color:#000;
 }
 html, body{
     min-height:100%;
@@ -41,34 +41,18 @@ pre.html {
 }
 
 #addButton{
-	width:80%;
-	position:relative;
-	height:20px;
-	background: #28B78D;
-	cursor: pointer;
-	border: none;
-	border-radius:3px;
-	color:white;
-	font-family:"Verdana",
+    width:120px;
+    font-size:20px;
+    height:30px;
 }
 
-/*#addButton{
-	position: relative;
-	float: right;
-	width:7%;
-	height:100%;
-	background: #28B78D;
-	cursor: pointer;
-	border: none;
-
-}*/
 #addButton:hover{
-    background: #1C8063;
+/*    background: #1C8063;*/
 
 
 }
 #addButton:active {
-    background: #145A45;
+/*    background: #145A45;*/
 
 }
 .fa-plus{
