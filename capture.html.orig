@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>Capture</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="backend.js"></script>
+    <script src="js/accordian.js"></script>
+    <script src="js/jquery.zaccordion.js"></script>
+    <script src="capture.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+    <script type="text/javascript" src="jquery/jquery-timepicker-1.3.1/jquery.timepicker.js"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="jquery-ui-1.10.4.custom/css/custom-theme/jquery-ui-1.10.4.custom.css" />
+    <link rel="stylesheet" type="text/css" href="jquery/jquery-timepicker-1.3.1/jquery.timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="accordian.css" />
+    <link rel="stylesheet" type="style/css" href="panel.css">
+    <link rel="stylesheet" type="style/css" href="simptip.css">
+
+    <script>
+      $(document).ready(function() {
+        $("#hamburger").hide();
+        
+
+        function grabCredentials () {
+          var emailInput, passwordInput;
+
+          emailInput = $("#email").val();
+          passwordInput = $("#password").val();
+
+          return [emailInput, passwordInput];
+        }
+
+
+        $("#login").click(function() {
+          var emailInput = grabCredentials()[0];
+          var passwordInput = grabCredentials()[1];
+
+          if (emailInput != null && passwordInput != null && BackendIsUser(emailInput, passwordInput)){
+            $("#user_name").html(emailInput);
+            $("#addButton").click();
+             // $("#hamburger").fadeToggle( "slow", "linear" );
+             // $("#hamburger").fadeToggle( "slow", "linear" );
+             // $("#hamburger").fadeToggle( "slow", "linear" );
+             // $("#hamburger").fadeToggle( "slow", "linear" );            
+             // $("#hamburger").fadeToggle( "slow", "linear" );
+          } else {
+            console.log('do not log in ');
+          }
+
+        });
+        $("#signup").click(function() {
+          var emailInput = grabCredentials()[0];
+          var passwordInput = grabCredentials()[1];
+
+          BackendCreateUser(emailInput, passwordInput);
+
+          $("#user_name").html(emailInput);
+          $("#addButton").click();
+
+          //send them to some page
+        })
+      });
+    </script>
+
+</head>
+<body>
+  <div id="container">
+
+    <div id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <nav class="mobileNav">
+        <ul>
+            <li><a>Capture</a></li>
+<<<<<<< HEAD
+            <li><a href="#" id="user_name"></a></li>
+=======
+            <li><a href="#">Name</a></li>
+>>>>>>> 07175b209e58758b0e828d915eb80f9aa543af07
+            <li><a href="#">Settings</a></li>
+            <li style="border-bottom:none;"><button id="addButton" class="panel_button">Add Event</button></li>
+        </ul>
+    </nav>
+    
+    <div id="contentLayer"></div>
+
+    <div id="content">
+      <div id="initialPage">
+        <video autoplay loop poster="" id="cover_video">
+        <source src="videos/wedding_video.mp4" type="video/mp4">
+        <source src="videos/wedding_video.ogg" type="video/ogg">
+        </video>
+        <div id="video_screen">
+        </div>
+        <div id="title"><img class="logo" src="images/logo.png" /></div>
+        <p>share your memories with <span id="theme">Capture</span></p>
+
+        <div id="signUp">
+            <input type="text" name="email" id="email" placeholder="email"/>
+            <input type="password" name="password" id="password" placeholder="password"/>
+
+            <button id="login" class="panel_button">Login</button>
+
+            <button id="signup" class="panel_button">Sign Up</button>
+            
+        </div>
+
+      </div> 
+      <div id="accordian">
+        <ul id="events">
+        </ul>
+      </div>
+    </div> 
+
+    <div id="dialog" title="Basic dialog">
+  <p>Sorry, You have reached the limit for your free trial. Go pro to add more events! :)</p>
+    </div>
+
+    </div>
+</body>
+</html>
