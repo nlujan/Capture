@@ -5,6 +5,7 @@
 
 <body>
   {{> page}}
+  {{> gallery}}
 </body>
 
 <template name="page">
@@ -211,6 +212,14 @@
     <div class="modal-footer">
       <a href="#" class="btn btn-primary done">Done</a>
     </div>
+  </div>
+</template>
+
+<template name="gallery">
+  <div class="gallery">
+    {{#each photos}}
+    {{> photo}}
+    {{/each}}
   </div>
 </template>
 

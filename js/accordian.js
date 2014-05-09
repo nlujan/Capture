@@ -2,7 +2,48 @@ $(document).ready(function() {
 	var openTabIndex;
 	var eventCount = 0;
 
+    //This makes the initial Accordian and adds one pane
+    var makeAccordian = function(){
+        $("#initialPage").hide();
+        $("#events").append("<li><img src='images/slide0.gif' width='100%' height='100%' alt='' /></li>");
+        $("#events").zAccordion({
+            startingSlide: 0,
+            auto: false,
+            tabWidth: '5%',
+            width: "100%",
+            height: "100%",
+            trigger: "mousedown",
+        });
+        createNewFrame();
+        slideHamburgerLeft();
+    }
 
+    //This function adds a pane to an existing accordian consisting of at least one pane
+    var addPane = function(){
+        slideHamburgerLeft();
+        var index = $("#events").children().length;
+        tabIndex();
+        $("#events").append("<li><img src='images/slide0.gif' width='100%' height='100%' alt='' /></li>");
+        $("#events").zAccordion("destroy", {
+            removeStyleAttr: true, /* This attribute will default to true and remove all inline styles. */
+            removeClasses: true, /* This attribute will default to false and remove any classes that have been set by zAccordion. */
+            destroyComplete: {
+                rebuild: {
+                    startingSlide: openTabIndex,
+                    auto: false,
+                    tabWidth: '5%',
+                    width: "100%",
+                    height: "100%",
+                    trigger: "mousedown"
+                },          
+            },
+        });
+        $("#events").zAccordion("trigger",index);
+        createNewFrame();
+    };
+
+
+    //Changes the color of the hamburger when you hover over it
 	$("#hamburger").hover(function(){
          $("#hamburger div").css("border", "1px solid #D8D8D8");
      }, function() {
@@ -10,22 +51,14 @@ $(document).ready(function() {
     $("#hamburger div").css("border", "1px solid white");
     });
     
-
-	$("#events").zAccordion({
-		startingSlide: 0,
-		auto: false,
-		tabWidth: '5%',
-		width: "100%",
-		height: "100%",
-		trigger: "mousedown"
-	});
+    //Resizes the accordian to ensure it's always the height and width of the screen
 	$(window).resize(function() {
 		$("#events").height($(window).height());
 		$("#events li").height($(window).height());
 		$("#events img").height($(window).height());
 	});
 
-
+    //keeps track of what tab the open frame is
 	var tabIndex = function(){
 		var index = 0;
 		$("#events li").each(function(){
@@ -38,63 +71,54 @@ $(document).ready(function() {
 		});
 	};
 
+    //If the add button is clicked it will create new accordian if none exists, 
+    // otherwise it just adds one pane
 	$("#addButton").click(function() {
-		$("#initialPage").hide();
-		//hideWelcome();
-		$("#hamburger").fadeToggle( "slow", "linear" )
+        if (eventCount==0){
+            makeAccordian();
+            eventCount++;
+        }
+		else{
+            addPane();
+            eventCount++;
+        }
+	});
 
-    	//enable all scrolling on mobile devices when menu is closed
-    	jQuery('#container').unbind('touchmove');
+    //Moves hamburger left and hides it
+    var slideHamburgerLeft = function(){
+        $("#hamburger").fadeToggle( "slow", "linear" )
 
-    	//set margin for the whole container back to original state with a jquery UI animation
-    	jQuery("#container").animate({"marginLeft": ["0", 'easeOutExpo']}, {
-        	duration: 700,
-        	complete: function() {
-              	jQuery('#content').css('width', 'auto');
-            	jQuery('#contentLayer').css('display', 'none');
+        //enable all scrolling on mobile devices when menu is closed
+        $('#container').unbind('touchmove');
+
+        //set margin for the whole container back to original state with a jquery UI animation
+        $("#container").animate({"marginLeft": ["0", 'easeOutExpo']}, {
+            duration: 700,
+            complete: function() {
+                $('#content').css('width', 'auto');
+                $('#contentLayer').css('display', 'none');
 
         }
         });
-		var index = $("#events").children().length;
-		tabIndex();
-		$("#events").append("<li><img src='images/slide0.gif' width='100%' height='100%' alt='' /></li>");
-		$("#events").zAccordion("destroy", {
-			removeStyleAttr: true, /* This attribute will default to true and remove all inline styles. */
-			removeClasses: true, /* This attribute will default to false and remove any classes that have been set by zAccordion. */
-			destroyComplete: {
-				rebuild: {
-					startingSlide: openTabIndex,
-					auto: false,
-					tabWidth: '5%',
-					width: "100%",
-					height: "100%",
-					trigger: "mousedown"
-				},			
-			},
-		});
-		$("#events").zAccordion("trigger",index);
-		// clickedFrame();
-		createNewFrame();
+    }
 
-	});
-
-	jQuery("#hamburger").click(function() {
+	$("#hamburger").click(function() {
 		$("#hamburger").fadeToggle( "slow", "linear" )
 
         //set the width of primary content container -> content should not scale while animating
-        var contentWidth = jQuery('#content').width();
+        var contentWidth = $('#content').width();
 
         //set the content with the width that it has originally
-        jQuery('#content').css('width', contentWidth);
+        $('#content').css('width', contentWidth);
 
         //display a layer to disable clicking and scrolling on the content while menu is shown
-        jQuery('#contentLayer').css('display', 'block');
+        $('#contentLayer').css('display', 'block');
 
         //disable all scrolling on mobile devices while menu is shown
-        jQuery('#container').bind('touchmove', function(e){e.preventDefault()});
+        $('#container').bind('touchmove', function(e){e.preventDefault()});
 
         //set margin for the whole container with a jquery UI animation
-        jQuery("#container").animate({"marginLeft": ["10%", 'easeOutExpo']}, {
+        $("#container").animate({"marginLeft": ["10%", 'easeOutExpo']}, {
             duration: 700
         });
 
@@ -103,21 +127,7 @@ $(document).ready(function() {
     });
 
     jQuery("#contentLayer").click(function() {
-
-    	$("#hamburger").fadeToggle( "slow", "linear" )
-
-    	//enable all scrolling on mobile devices when menu is closed
-    	jQuery('#container').unbind('touchmove');
-
-    	//set margin for the whole container back to original state with a jquery UI animation
-    	jQuery("#container").animate({"marginLeft": ["0", 'easeOutExpo']}, {
-        	duration: 700,
-        	complete: function() {
-              	jQuery('#content').css('width', 'auto');
-            	jQuery('#contentLayer').css('display', 'none');
-
-        }
-        });
+        slideHamburgerLeft();
     });
 
     var createNewFrame = function() {

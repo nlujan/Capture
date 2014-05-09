@@ -10,6 +10,7 @@ Each event is represented by a document in the Events collection:
 	invited: array of user id's that are invited
 */
 Events = new Meteor.Collection("events");
+Photos = new Meteor.Collection("photos");
 
 // Allow users to write directly to this collection from client code, subject to limitations
 Events.allow({
