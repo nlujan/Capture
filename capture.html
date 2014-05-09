@@ -5,6 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="backend.js"></script>
     <script src="js/accordian.js"></script>
     <script src="js/jquery.zaccordion.js"></script>
     <script src="capture.js"></script>
@@ -12,11 +13,58 @@
     <script type="text/javascript" src="jquery/jquery-timepicker-1.3.1/jquery.timepicker.js"></script>
 
 
+
     <link rel="stylesheet" type="text/css" href="jquery-ui-1.10.4.custom/css/custom-theme/jquery-ui-1.10.4.custom.css" />
     <link rel="stylesheet" type="text/css" href="jquery/jquery-timepicker-1.3.1/jquery.timepicker.css" />
     <link rel="stylesheet" type="text/css" href="accordian.css" />
     <link rel="stylesheet" type="style/css" href="panel.css">
     <link rel="stylesheet" type="style/css" href="simptip.css">
+
+    <script>
+      $(document).ready(function() {
+        $("#hamburger").hide();
+        
+
+        function grabCredentials () {
+          var emailInput, passwordInput;
+
+          emailInput = $("#email").val();
+          passwordInput = $("#password").val();
+
+          return [emailInput, passwordInput];
+        }
+
+
+        $("#login").click(function() {
+          var emailInput = grabCredentials()[0];
+          var passwordInput = grabCredentials()[1];
+
+          if (emailInput != null && passwordInput != null && BackendIsUser(emailInput, passwordInput)){
+            $("#user_name").html(emailInput);
+            $("#addButton").click();
+             // $("#hamburger").fadeToggle( "slow", "linear" );
+             // $("#hamburger").fadeToggle( "slow", "linear" );
+             // $("#hamburger").fadeToggle( "slow", "linear" );
+             // $("#hamburger").fadeToggle( "slow", "linear" );            
+             // $("#hamburger").fadeToggle( "slow", "linear" );
+          } else {
+            console.log('do not log in ');
+          }
+
+        });
+        $("#signup").click(function() {
+          var emailInput = grabCredentials()[0];
+          var passwordInput = grabCredentials()[1];
+
+          BackendCreateUser(emailInput, passwordInput);
+
+          $("#user_name").html(emailInput);
+          $("#addButton").click();
+
+          //send them to some page
+        })
+      });
+    </script>
 
 </head>
 <body>
@@ -31,7 +79,7 @@
     <nav class="mobileNav">
         <ul>
             <li><a>Capture</a></li>
-            <li><a href="#">Profile</a></li>
+            <li><a href="#" id="user_name"></a></li>
             <li><a href="#">Settings</a></li>
             <li style="border-bottom:none;"><button id="addButton" class="panel_button">Add Event</button></li>
         </ul>
