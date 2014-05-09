@@ -168,7 +168,7 @@ nav li a {
     font-weight: 100;
 	font-size: 80px ;
 	text-align:center;
-	margin-top: 15%;
+	margin-top: 12%;
     position: relative;
     bottom: 100%;
 }
@@ -178,7 +178,7 @@ nav li a {
 	font-family: "Helvetica";
     font-weight: 100;
 	font-size: 30px;
- 	margin-top: 6%;
+ 	margin-top: 2%;
 	text-align:center;
 	position:relative;
     bottom: 100%;
@@ -212,6 +212,44 @@ nav li a {
 
 #theme {
     color: #048969;
+}
+
+#signUp input{
+    border:0; 
+    padding:10px; 
+    font-size:1.3em; 
+    font-family:Arial, sans-serif; 
+    border:solid 1px #ccc; 
+    margin:0 0 20px; 
+    width:300px;
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px; 
+    border-radius: 3px; 
+    opacity:.5;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+    color: #048969;
+}
+#signUp input:focus{
+    outline:none;
+}
+#signUp{
+    width:100px;
+    height: 100px;
+    position:absolute;
+    top:60%;
+    left:50%;
+    margin-left: -150px;
+}
+
+#signUp button{
+    width:153px;
+   
+
+}
+#login{
+}
+#signup{
+    left:169px;
 }
 
 
