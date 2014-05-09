@@ -1,0 +1,55 @@
+<head>
+	<title> Capture App</title>
+</head>
+
+<body>
+<<<<<<< HEAD
+  {{> page}}
+  {{> gallery}}
+=======
+	<h1> Welcome to Capture </h1>
+	{{> loginButtons}}
+	{{> userInfo}}
+	{{> page}}
+	{{> inviteDialog}}
+	{{> attendance}}
+>>>>>>> 765bd4d06670e80d54839c57c83aae8bf31c55e5
+</body>
+
+<template name="userInfo">
+	<p> Welcome {{userEmail}} </p>
+</template>
+
+<template name="page">
+	{{#if showInviteDialog}}
+		{{> inviteDialog}}
+	{{/if}}
+</template>
+
+<template name="inviteDialog">
+	{{#each uninvited}}
+		<div class="invite">
+			<a href="#" class="invite_button">Invite</a>
+			{{displayName}}
+		</div>
+	{{else}}
+		Everyone on the site has already been invited.
+	{{/each}}
+</template>
+
+<<<<<<< HEAD
+<template name="gallery">
+  <div class="gallery">
+    {{#each photos}}
+    {{> photo}}
+    {{/each}}
+  </div>
+</template>
+
+=======
+<template name="attendance">
+	<div class="invite">
+		<a href="#" class="btn btn-mini invite">Invite People</a>
+	</div>
+</template>
+>>>>>>> 765bd4d06670e80d54839c57c83aae8bf31c55e5
