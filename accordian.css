@@ -177,8 +177,8 @@ nav li a {
 	color:white;
 	font-family: "Helvetica";
     font-weight: 100;
-	font-size: 36px;
- 	margin-top: 8%;
+	font-size: 30px;
+ 	margin-top: 6%;
 	text-align:center;
 	position:relative;
     bottom: 100%;
@@ -211,7 +211,7 @@ nav li a {
 }
 
 #theme {
-    color: #06ba8f;
+    color: #048969;
 }
 
 
