@@ -1,1 +1,41 @@
-<h1> welcome</h1>
+  <div id="container">
+
+    <div id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <nav class="mobileNav">
+        <ul>
+            <li><a>Capture</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li style="border-bottom:none;"><button id="addButton">Add Event</button></li>
+        </ul>
+    </nav>
+    
+    <div id="contentLayer"></div>
+
+    <div id="content">
+      <div id="initialPage">
+      	<%= video_tag("videos/wedding_video.mp4", "videos/wedding_video.ogg", autoplay: true, poster: "", loop:true, id:"cover_video")%>
+       
+        <div id="video_screen">
+        </div>
+        <div id="title">
+            <%= image_tag("logo.png", class:"logo") %></div>
+        <p>share your memories with <span id="theme">Capture</span></p>
+
+      </div> 
+      <div id="accordian">
+        <ul id="events">
+        </ul>
+      </div>
+    </div> 
+
+    <div id="dialog" title="Basic dialog">
+  <p>Sorry, You have reached the limit for your free trial. Go pro to add more events! :)</p>
+    </div>
+
+    </div>
