@@ -149,6 +149,7 @@ $(document).ready(function() {
         // remove current and blur closed frames
         $(".frame-closed").data("current", false);
         $(".frame-closed #panel").addClass("blur");
+        toggleVerticalName($(".frame-previous"), $(".frame-previous .event_name").val(), false);
 
         // add current to newly created frame
         $(".frame-open").data("current", true);
@@ -187,13 +188,38 @@ $(document).ready(function() {
     	//if the frame that was clikced was closed
       	if ($(".frame-open").data("current") != true) {
       		
+      		// if the invite screen is open on previous frame
+     		if ($(".frame-previous #invite_screen").hasClass("show_panel")) {
+ 				$(".frame-previous #invite_screen").toggleClass("show_panel");
+       		}
         	// stuff for frame-closed
         	$(".frame-closed").data("current", false);
         	$(".frame-closed #panel").addClass("blur");
+        	toggleVerticalName($(".frame-previous"), $(".frame-previous .event_name").val(), false);
 
         	// stuff for frame-open
         	$(".frame-open").data("current", true);
         	$(".frame-open #panel").removeClass("blur");
+        	toggleVerticalName($(".frame-open"), $(".frame-open .event_name").val(), true);
       }
     }
+
+    var toggleVerticalName = function (frame_focus, event_name, hasVerticalName) {
+    	if (! hasVerticalName) {
+    		frame_focus.append('<div class="vertical_name">'+event_name+'</div>');
+    	}
+    	else {
+    		temp_focus = frame_focus.find($(".vertical_name"));
+    		temp_focus.remove();
+    	}
+    }
 });
+
+
+
+
+
+
+
+
+
