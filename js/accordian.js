@@ -78,6 +78,10 @@ $(document).ready(function() {
             makeAccordian();
             eventCount++;
         }
+        else if (eventCount==5){
+            slideHamburgerLeft();
+            $( "#dialog" ).dialog({modal: true});
+        }
 		else{
             addPane();
             eventCount++;
