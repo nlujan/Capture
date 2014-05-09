@@ -52,7 +52,7 @@ Meteor.methods({
 			throw new Meteor.Error(413, "Event Name too long");
 
 		var id = options._id || Random.id();
-		Parties.insert({
+		Events.insert({
 			_id: id,
 			owner: this.userId,
 			name: options.name,
