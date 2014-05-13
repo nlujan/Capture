@@ -56,6 +56,7 @@
 
     <!-- invite screen -->
     <div id="invite_screen">
+      <p id="success">Success!</p>
       <input type="text" class="email_list" name="tag[]" value="example@gmail.com" />
       <button class="panel_button inviteNested_button">Invite</button>
       <button class="panel_button inviteToAll_button">Invite to All</button>
@@ -66,9 +67,9 @@
 
     <div id="upload_modal" class="hide_panel">
       <form action="/file-upload" class="" id="">
-        <input class="make_transparent" type="file">
-        <input class="make_transparent" type="submit">
-        <input class="make_transparent" type="submit">
+        <input id="browse" class="" type="file">
+        <input id="upload_timeline" class="make_transparent" type="submit" value="To Timeline">
+        <input id="upload_regular" class="make_transparent" type="submit" value="As Cover Photo">
       </form>
       <div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Cancel">
         <img class="delete_inner" src="images/icon_19368/icon_19368.png" />

@@ -147,7 +147,7 @@ $(document).ready(function() {
         var i = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
 
         // add all the panel functionality
-        $(".frame-open").append('<div id="gray_screen"></div><div id="panel" class="panel'+i+'"><div id="title_screen"><div class="title_event_name simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Name"><input type="text" class="input_title event_name" value="Event Name" onclick="this.select();" /></div><div class="title_address simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Address"><input type="text" class="input_title address" value="Address" onclick="this.select();" /></div><div class="title_date simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Date"><input type="text" class="input_title date" value="Date" onclick="this.select();"/></div><div class="title_time simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Time"><input type="text" class="input_title time" value="Time" /></div><div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Delete Event"><img class="delete_inner" src="images/icon_16505/icon_16505.png" /></div></div><button class="panel_button timeline_button" onclick='+"window.location.href='learn_timeline.html'"+'>Timeline</button><button class="panel_button invite_button">Invite</button><button class="panel_button upload_button">Upload</button><button class="panel_button relive_button" onclick='+"window.location.href='http://www.satine.org/research/webkit/snowleopard/snowstack.html'"+'>Relive</button></div><!-- invite screen --><div class="hide_panel" id="invite_screen"><textarea type="text" class="email_list" placeholder="example@gmail.com"></textarea><button class="panel_button inviteNested_button">Invite</button><button class="panel_button inviteToAll_button">Invite to All</button><div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Cancel"><img class="cancel" src="images/icon_19368/icon_19368.png" /></div></div><div id="upload_modal" class="hide_panel"><form action="/file-upload" class="" id=""><input id="browse" class="" type="file"><input id="upload_regular" class="make_transparent" type="submit"><input id="upload_timeline" class="make_transparent " type="submit"></form><div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Cancel"><img class="delete_inner" src="images/icon_19368/icon_19368.png" /></div></div>');
+        $(".frame-open").append('<div id="gray_screen"></div><div id="panel" class="panel'+i+'"><div id="title_screen"><div class="title_event_name simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Name"><input type="text" class="input_title event_name" value="Event Name" onclick="this.select();" /></div><div class="title_address simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Address"><input type="text" class="input_title address" value="Address" onclick="this.select();" /></div><div class="title_date simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Date"><input type="text" class="input_title date" value="Date" onclick="this.select();"/></div><div class="title_time simptip-position-right simptip-movable simptip-smooth" data-tooltip="Enter Time"><input type="text" class="input_title time" value="Time" /></div><div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Delete Event"><img class="delete_inner" src="images/icon_16505/icon_16505.png" /></div></div><button class="panel_button timeline_button" onclick='+"window.location.href='learn_timeline.html'"+'>Timeline</button><button class="panel_button invite_button">Invite</button><button class="panel_button upload_button">Upload</button><button class="panel_button relive_button" onclick='+"window.location.href='http://www.satine.org/research/webkit/snowleopard/snowstack.html'"+'>Relive</button></div><!-- invite screen --><div class="hide_panel" id="invite_screen"><textarea type="text" class="email_list" placeholder="example@gmail.com"></textarea><button class="panel_button inviteNested_button">Invite</button><button class="panel_button inviteToAll_button">Invite to All</button><div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Cancel"><img class="cancel" src="images/icon_19368/icon_19368.png" /></div></div><div id="upload_modal" class="hide_panel"><input id="browse" class="" type="file"><button id="upload_timeline" class="make_transparent" type="">To Timeline</button><button id="upload_regular" class="make_transparent" type="">As Cover Photo</button><div class="simptip-position-bottom simptip-movable simptip-smooth" id="delete" data-tooltip="Cancel"><img class="delete_inner" src="images/icon_19368/icon_19368.png" /></div></div>');
 
         // remove current and blur closed frames
         $(".frame-closed").data("current", false);
@@ -156,6 +156,8 @@ $(document).ready(function() {
 
         // add current to newly created frame
         $(".frame-open").data("current", true);
+
+
 
         // add listeners for invite button
         $(".frame-open .invite_button").click(function() {
@@ -176,10 +178,24 @@ $(document).ready(function() {
         	$(".frame-open #panel").removeClass("blur");
         });
 
+        // add listener to inner invite button
+        $(".frame-open .inviteNested_button").click(function() {
+        	$('<p id="success">Success!</p>').hide().appendTo(".frame-open #invite_screen").fadeIn(2000);
+        	setTimeout(function () {$(".frame-open #invite_screen #delete").click()}, 2000);
+        	setTimeout(function () {$("#success").remove()}, 2000);
+        });
+
         // add listener for upload modal cancel button
         $(".frame-open #upload_modal #delete").click(function() {
         	$(".frame-open #upload_modal").toggleClass("show_panel");
         	$(".frame-open #panel").removeClass("blur");
+        });
+
+        // add listener to inner upload button
+        $(".frame-open #upload_regular").click(function() {
+        	$('<p id="success">Success!</p>').hide().appendTo(".frame-open #upload_modal").fadeIn(2000);
+        	setTimeout(function () {$(".frame-open #upload_modal #delete").click()}, 2000);
+        	setTimeout(function () {$("#success").remove()}, 2000);
         });
 
         // add datepicker and timepicker

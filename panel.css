@@ -294,19 +294,40 @@
 	width: 15%;
 }
 
+.make_transparent:hover {
+	/*background-color: rgba(94,171,196,1.0);*/
+	background-color: #06ba8f;
+	transition: background-color 0.25s;
+	-webkit-transition: background-color 0.25s;
+}
+
+.make_transparent:focus {
+	outline: 0;
+}
+
 #upload_regular {
-	left: 400px;
+	left: 70%;
 }
 
 #upload_timeline {
-	left: 600px;
+	left: 50%;
 }
 
 #browse {
 	position: absolute;
 	bottom: 50px;
-	left: 150px;
+	left: 15%;
 }
 
+#success {
+	position: absolute;
+	top: 20%;
+	left: 47%;
+	color: #048969;
+	font-size: 23px;
+	font-family: "Gill Sans";
+	font-weight: bold;
+
+}
 
 
