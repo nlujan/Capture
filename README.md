@@ -2,7 +2,9 @@ Capture
 =======
 
 :octocat: &nbsp;**Live Demo (Chrome only)**: http://web.mit.edu/toksfifo/Public/capture.html
+
 **Video Demo**: https://www.youtube.com/watch?v=mPNQgAA5NI8
+
 **Process**: http://web.mit.edu/toksfifo/www/capture.html
 
 **Note**: This project was created as an exercise in User Interface Design and Implementation. No back-end has been implemented.
